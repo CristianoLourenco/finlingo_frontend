@@ -8,10 +8,11 @@ import { Home } from '../screens/Home/Home';
 const Stack = createNativeStackNavigator();
 
 export function RootStack() {
+  
   return (
     <>
-    <Stack.Navigator initialRouteName="Welcome" >
-      <Stack.Screen name="Welcome" component={WelCome} options={{
+    <Stack.Navigator initialRouteName='WelCome'>
+      <Stack.Screen name="Welcome" component={WelCome} initialParams={{ goToTabs: () => setIsInsideTabs(true) }}options={{
         headerShown: false
       }} />
       <Stack.Screen name="Cadastro" component={Cadastro} options={{

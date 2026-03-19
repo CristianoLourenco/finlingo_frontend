@@ -1,5 +1,6 @@
 import { Link } from "@react-navigation/native";
 import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, ScrollView} from "react-native";
+import { useState } from "react";
 import Olho from "../../../assets/olho.png"
 import { styles } from "./style";
 import { BtnClose } from "../../components/BtnClose/BtnClose";
@@ -10,6 +11,7 @@ import { TabRoutes } from "../../routes/tabs.routes";
 
 
 export function Cadastro() {
+    const [isInsideTabs, setIsInsideTabs] = useState(false)
     return(
         <View style={styles.Container}>
             <View style={{gap: 80, marginTop: 50}}>
@@ -33,11 +35,9 @@ export function Cadastro() {
                             <Image source={Olho} style={{width: 30, height: 20, marginLeft: -25}} />
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.Button}> 
+                    <TouchableOpacity style={styles.Button} goToTabsonPress={goToTabs}> 
                         <Text style={styles.Letter}>
-                            <Link screen="Home">
-                                Entrar
-                            </Link> 
+                                Entrar 
                         </Text>
                     </TouchableOpacity>
                 <Text style={styles.link}>
